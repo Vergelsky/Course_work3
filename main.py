@@ -1,7 +1,7 @@
 from src import *
 
 
-filename = "operations.json"
+filename = "src/operations.json"
 
 #Извлекаем из файла список операций
 operations_list = extract_operations_list(filename)
