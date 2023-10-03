@@ -1,18 +1,19 @@
-from src import *
-
+from src.scripts import *
 
 filename = "src/operations.json"
 
+
+
 #Извлекаем из файла список операций
-operations_list = extract_operations_list(filename)
+extracted_list = extract_operations_list(filename)
 
 #Оставляем только те, что EXECUTED
-operations_list = filter_executed(operations_list)
+filtered_list = filter_executed(extracted_list)
 
 #Сортируем список по полю date
-operations_list = sort_for_date(operations_list)
+sorted_list = sort_for_date(filtered_list)
 
 #Выводим в консоль первые 5 элементов в правильном виде
-for operation in operations_list[:5]:
-    repr = comb_text(operation)
-    print(repr, end="/n")
+for operation in sorted_list[:5]:
+    show = comb_text(operation) +"\n"
+    print(show)
